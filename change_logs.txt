@@ -1,3 +1,0 @@
-1. added new column(id) to table treasury_settings
-2. put value 1 to column "id"
-3. create new table report_code

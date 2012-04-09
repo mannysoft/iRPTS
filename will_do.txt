@@ -1,8 +1,0 @@
-1. adding of new RPU- province and city must be selected 
-   so the district and barangay will need to select
-   if possible put auto suggest in district field and barangay
-   field
-2. in FASS create tabs for owners information, location of property
-   RPU identification numbers and so on. If we can edit the fields on 
-   its place much better(edit_place)
-3.
