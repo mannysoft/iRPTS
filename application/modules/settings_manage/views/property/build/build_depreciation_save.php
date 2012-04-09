@@ -51,7 +51,7 @@
   <tr>
     <td>&nbsp;</td>
     <td><input type="submit" name="encode_barangay" id="encode_barangay" value="Save"/> 
-      <a href="<?php echo base_url();?>settings_manage/property/build_actual_uses">Cancel</a></td>
+      <a href="<?php echo base_url();?>settings_manage/property/build_depreciation">Cancel</a></td>
     <td><input name="op" type="hidden" id="op" value="1" /></td>
   </tr>
 </table>

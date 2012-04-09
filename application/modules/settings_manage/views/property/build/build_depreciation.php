@@ -2,7 +2,7 @@
   <tr>
     <td width="10%">&nbsp;</td>
     <td width="67%">&nbsp;</td>
-    <td width="23%"><a href="<?php echo base_url();?>settings_manage/property/build_actual_uses_save/">Add new</a></td>
+    <td width="23%"><a href="<?php echo base_url();?>settings_manage/property/build_depreciation_save/">Add new</a></td>
   </tr>
 </table>
 <table width="100%" border="0">
@@ -50,7 +50,7 @@
 		<td bgcolor=""><?php echo $row->report_code;?></td>
         <td bgcolor=""><?php echo $row->status;?></td>
         <td align="left" bgcolor="">
-        <a href="<?php echo base_url();?>settings_manage/property/build_actual_uses_save/<?php echo $row->id;?>" class="edit_barangay">Edit</a> | <a href="#" onclick="delete_item('<?php echo $row->username;?>','Delete <?php echo $row->description;?>?', '<?php echo base_url();?>settings_manage/property/build_actual_uses_delete/<?php echo $row->id;?>')">Delete</a></td>
+        <a href="<?php echo base_url();?>settings_manage/property/build_depreciation_save/<?php echo $row->id;?>" class="edit_barangay">Edit</a> | <a href="#" onclick="delete_item('<?php echo $row->username;?>','Delete <?php echo $row->description;?>?', '<?php echo base_url();?>settings_manage/property/build_depreciation_delete/<?php echo $row->id;?>')">Delete</a></td>
         </tr>
 		<?php endforeach;?>
         <tr>
