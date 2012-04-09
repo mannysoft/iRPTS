@@ -1,0 +1,17 @@
+1. od
+2. location_addresses
+3. locations
+4. owners
+5. persons
+6. owner_persons
+7. addresses
+8. person_addresses
+
+note that the RPU location and owner address is diff
+for RPU - location
+for owner - address
+
+
+
+
+28429
