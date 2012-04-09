@@ -22,16 +22,9 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td align="right">Range:</td>
-    <td><input name="range_lower_bound" type="text" id="range_lower_bound" value="<?php echo $plant->range_lower_bound; ?>" size="10" />
-      -
-      <input name="range_upper_bound" type="text" id="range_upper_bound" value="<?php echo $plant->range_upper_bound; ?>" size="10" /></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="right">Depreciation Rate:</td>
+    <td align="right">Assessment Level:</td>
     <td><input name="value" type="text" id="value" value="<?php echo $plant->value; ?>" size="5" />
-    %</td>
+      %</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -51,7 +44,7 @@
   <tr>
     <td>&nbsp;</td>
     <td><input type="submit" name="encode_barangay" id="encode_barangay" value="Save"/> 
-      <a href="<?php echo base_url();?>settings_manage/property/build_depreciation">Cancel</a></td>
+      <a href="<?php echo base_url();?>settings_manage/property/machine_actual_uses">Cancel</a></td>
     <td><input name="op" type="hidden" id="op" value="1" /></td>
   </tr>
 </table>

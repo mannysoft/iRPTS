@@ -648,4 +648,171 @@ class Property extends MX_Controller {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// --------------------------------------------------------------------
+	// --------------------------------------------------------------------
+	
+	function machine_actual_uses()
+	{
+		$data = array();
+		
+		$data['page_name'] = 'Settings>>Property>>Land>>Actual Uses';
+		
+		$data['msg'] = '';
+		
+		$l = new Machinery_actual_use_m();
+		
+		$l->order_by('description');
+		
+		$data['plants'] = $l->get();
+		
+		$data['main_content'] = 'property/machine/machine_actual_uses';
+		
+		$this->load->view('includes/template', $data);
+	}
+	
+	// --------------------------------------------------------------------
+	
+	function machine_actual_uses_save($id = '')
+	{
+		
+		$data['page_name'] 	= 'Machinery';
+		
+		$data['msg'] 		= '';
+		
+		$data['focus_field'] = 'report_code';
+				
+		$l = new Machinery_actual_use_m();
+		
+		$data['plant'] = $l->get_by_id($id);
+		
+		if ($this->input->post("op"))
+		{
+			$this->form_validation->set_rules('code', 'Code','required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+			$this->form_validation->set_rules('value', 'Assessment Level', 'required|numeric');
+			
+			
+			if ($this->form_validation->run($this) == TRUE)
+			{
+				$l->report_code			= $this->input->post('report_code');			
+				$l->code				= $this->input->post('code');
+				$l->description			= $this->input->post('description');
+				$l->value				= $this->input->post('value');
+				$l->status				= $this->input->post('status');	
+				$l->save();
+				
+				$this->session->set_flashdata('msg', 'Machinery Actual uses has been saved!');
+							
+				redirect(base_url().'settings_manage/property/machine_actual_uses', 'refresh');
+			}
+			
+		}
+		
+		$data['main_content'] = 'property/machine/machine_actual_uses_save';
+		
+		$this->load->view('includes/template', $data);
+	}
+	
+	// --------------------------------------------------------------------
+	
+	function machine_actual_uses_delete($id = '')
+	{
+		$l = new Machinery_actual_use_m();
+		$l->get_by_id( $id )->delete();
+				
+		$this->session->set_flashdata('msg', 'Machinery Actual uses has been deleted!');
+		
+		redirect(base_url().'settings_manage/property/machine_actual_uses', 'refresh');
+		
+	}
+	
+	// --------------------------------------------------------------------
+	
+	function machine_depreciation()
+	{
+		$data = array();
+		
+		$data['page_name'] = 'Settings>>Property>>Land>>Actual Uses';
+		
+		$data['msg'] = '';
+		
+		$l = new Machinery_depreciation_m();
+		
+		$l->order_by('description');
+		
+		$data['plants'] = $l->get();
+		
+		$data['main_content'] = 'property/machine/machine_depreciation';
+		
+		$this->load->view('includes/template', $data);
+	}
+	
+	// --------------------------------------------------------------------
+	
+	function machine_depreciation_save($id = '')
+	{
+		
+		$data['page_name'] 	= 'Machineries';
+		
+		$data['msg'] 		= '';
+		
+		$data['focus_field'] = 'report_code';
+				
+		$l = new Machinery_depreciation_m();
+		
+		$data['plant'] = $l->get_by_id($id);
+		
+		if ($this->input->post("op"))
+		{
+			$this->form_validation->set_rules('code', 'Code','required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+			$this->form_validation->set_rules('value', 'Assessment Level', 'required|numeric');
+			
+			
+			if ($this->form_validation->run($this) == TRUE)
+			{
+				$l->report_code			= $this->input->post('report_code');			
+				$l->code				= $this->input->post('code');
+				$l->description			= $this->input->post('description');
+				$l->value				= $this->input->post('value');
+				$l->status				= $this->input->post('status');	
+				$l->save();
+				
+				$this->session->set_flashdata('msg', 'Machineries Depreciation has been saved!');
+							
+				redirect(base_url().'settings_manage/property/machine_depreciation', 'refresh');
+			}
+			
+		}
+		
+		$data['main_content'] = 'property/machine/machine_depreciation_save';
+		
+		$this->load->view('includes/template', $data);
+	}
+	
+	// --------------------------------------------------------------------
+	
+	function machine_depreciation_delete($id = '')
+	{
+		$l = new Machinery_depreciation_m();
+		$l->get_by_id( $id )->delete();
+				
+		$this->session->set_flashdata('msg', 'Machineries Depreciation has been deleted!');
+		
+		redirect(base_url().'settings_manage/property/machine_depreciation', 'refresh');
+		
+	}
+	
+	
 }	
