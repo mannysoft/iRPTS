@@ -1,4 +1,4 @@
-# iRPTS
+# iRPTS (Integrated Real Property Tax System)
 
 * Version: 1.01
 
