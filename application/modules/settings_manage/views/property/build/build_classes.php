@@ -48,7 +48,7 @@
         <td align="left" bgcolor=""><?php echo ($row->type == 'B') ? 'Building' : 'Improvement';?></td>
         <td align="left" bgcolor=""><?php echo $row->status;?></td>
         <td align="left" bgcolor="">
-        <a href="<?php echo base_url();?>settings_manage/property/build_classes_save/<?php echo $row->id;?>" class="edit_barangay">Edit</a> | <a href="#" onclick="delete_item('<?php echo $row->username;?>','Delete Land Class <?php echo $row->description;?>?', '<?php echo base_url();?>settings_manage/property/build_classes_delete/<?php echo $row->id;?>')">Delete</a></td>
+        <a href="<?php echo base_url();?>settings_manage/property/build_classes_save/<?php echo $row->id;?>" class="edit_barangay">Edit</a> | <a href="#" onclick="delete_item('<?php echo $row->username;?>','Delete Class <?php echo $row->description;?>?', '<?php echo base_url();?>settings_manage/property/build_classes_delete/<?php echo $row->id;?>')">Delete</a></td>
         </tr>
 		<?php endforeach;?>
       <tr>

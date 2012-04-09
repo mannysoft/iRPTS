@@ -319,47 +319,7 @@ class Rpu extends MX_Controller {
 		$data['msg'] = '';
 		
 		// Get owner id
-		$owner_id 					= $this->Owner->get_owner_id($od_id);
-		
-		$person_id 					= $this->Owner_person->get_person_id($owner_id);
-		
-		$data['persons'] 			= $person_id;
-		
-		$data['od_details']			= $this->Od->get_od_details($od_id);
-		
-		$location 					= $this->Location_address->get_location($od_id);
-		
-		$data['barangay_name'] 		= $this->Barangay->get_barangay_name($location['barangay_id']);
-		
-		$data['district_name'] 		= $this->District->get_district_name($location['district']);
-		
-		$data['municipality_city'] 	= $this->Municipality_city->get_name($location['municipality_city']);
-		
-		$data['province'] 			= $this->Province->get_name($location['province']);
-		
-		$data['location']			= $location ;
-		
-		$data['affidavit_of_ownership'] = '';
-		
-		if ($data['od_details']['affidavit_of_ownership'] == 1)
-		{
-			$data['affidavit_of_ownership'] = 'checked = "checked"';
-		}
-		
-		$data['barangay_certificate'] = '';
-		
-		if ($data['od_details']['barangay_certificate'] == 1)
-		{
-			$data['barangay_certificate'] = 'checked = "checked"';
-		}
-		
-		$data['land_tagging'] = '';
-		
-		if ($data['od_details']['land_tagging'] == 1)
-		{
-			$data['land_tagging'] = 'checked = "checked"';
-		}
-		
+
 			
 		$this->load->view('includes/header');
 		
@@ -377,18 +337,54 @@ class Rpu extends MX_Controller {
 	function td_details($od_id)
 	{
 		$data['page_name'] = '<b>Tax Declaration</b>';
-		
+	
+		//default value
 		$data['msg'] = '';
+		$data['company_address'] ='';
+		$data['company_name'] ='';
+		$data['company_tno'] ='';
+		$data['personal_name'] ='';
+		$data['personal_address'] ='';
+        $data['personal_tno'] ='';
+		
+		//get owner's ID
+		$o = new Owner_m();
+		$o->get_by_od_id($od_id); 
 		
 		//Get Personal Info
-		$o = new Owner_m();
-		$o->get_by_id($od_id); 
+		if($o->person_id != '0')
+		{	
+			$p = new Person_m();
+			$p->get_by_id($o->person_id);
+			$data['personal_name'] = $p->first_name.' '.$p->middle_name.' '.$p->last_name;
+			
+			$a = new Address_m();
+			$a->get_by_id($p->address_id);
+			$data['personal_address'] = $a->number.' '.$a->street.' '.$a->barangay.' '.$a->district.' '.$a->municipality_city.' '.$a->province;
+			
+			$data['company_tno'] = $p->telephone;
+		}
+			
+		//Get Company Info	
+		if($o->company_id != '0')
+		{
+		$c = new Company_m();
+		$c->get_by_id($o->company_id);
+		$data['company_name'] = $c->company_name;
 		
-		$p = new Person_m();
-		$data['personal_info'] = $p->get_by_id($o->person_id);
-
 		$a = new Address_m();
-		$data['address_info'] = $a->get_by_id($p->address_id);
+		$a->get_by_id($c->address_id);
+		$data['company_address'] = $a->number.' '.$a->street.' '.$a->barangay.' '.$a->district.' '.$a->municipality_city.' '.$a->province;
+		
+		$data['company_tno'] = $c->telephone;
+		}
+		
+		$afs = new Afs_m();
+		$data['afs'] = $afs->get_by_od_id($od_id);
+
+		$td = new Td_m();
+		$data['td'] = $td->get_by_afs_id($afs->id);
+		
 		
 		$this->load->view('includes/header');
 		
@@ -401,6 +397,8 @@ class Rpu extends MX_Controller {
 		
 	}
 	
+	// --------------------------------------------------------------------
+		
 	function rptop_details($od_id)
 	{
 		$data['page_name'] = '<b>RPTOP INFORMATION</b>';

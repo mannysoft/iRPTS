@@ -1,1283 +1,1057 @@
-<table width="702" height="375" border="0" cellpadding="0" cellspacing="0">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td align="left" valign="top"><!-- BEGIN RPTOPTable -->
-      <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <td align="left" class="subtitle"><h3>Owner's Infomation</h3></td>
+  </tr>
+  <tr>
+    <td align="left"><!-- BEGIN OwnerListTable -->
+      <table width="100%" border="1"  height="100%" class="type-one">
+        <!-- BEGIN PersonTable -->
         <tr>
-          <td align="center" valign="top" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td class="subtitle">OWNER'S INFORMATION <br /></td>
-              <td align="right" valign="top"><a href="#top"><img src="images/arrow_down.gif" width="40" height="30" border="0" /></a></td>
-            </tr>
-          </table></td>
+          <th width="20%" align="left">Name </th>
+          <th width="15%" align="left" >Address</th>
+          <th width="10%" align="left" >Telephone</th>
         </tr>
+        <!-- BEGIN PersonList -->
         <tr>
-          <td align="center" valign="top"><!-- BEGIN OwnerListTable -->
-            <table width="90%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td class="mainnav" valign="top"><table width="100%" border="0" cellspacing="1" cellpadding="2" height="100%">
-                  <!-- BEGIN PersonTable -->
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" width="20%">Name </td>
-                    <td width="15%" class="fileds_comment">Address</td>
-                    <td width="10%" class="fileds_comment">Telephone</td>
-                  </tr>
-                  <!-- BEGIN PersonList -->
-                  <tr bgcolor="#F6F6F6" valign="top">
-                    <td class="fields"><?php echo $personal_info->first_name.' ',$personal_info->middle_name.' ',$personal_info->last_name;?> </td>
-                    <td class="fileds_comment"><?php echo $address_info->number.' '.$address_info->street.' '.$address_info->barangay.' '.$address_info->district.' '.$address_info->municipality_city.' '.$address_info->province;?> </td>
-                    <td class="fileds_comment"><?php echo $personal_info->telephone;?></td>
-                  </tr>
-                  <!-- END PersonList -->
-                  <!-- BEGIN PersonDBEmpty -->
-                  <!-- END PersonDBEmpty -->
-                  <!-- END PersonTable -->
-                  <!-- BEGIN CompanyTable -->
-                  <!-- BEGIN CompanyList -->
-                  <tr bgcolor="#F6F6F6" valign="top">
-                    <td class="fields">{companyName} </td>
-                    <td class="fileds_comment">{address}</td>
-                    <td class="fileds_comment">{telephone}</td>
-                  </tr>
-                  <!-- END CompanyList -->
-                  <!-- BEGIN OwnerDBEmpty -->
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" valign="top" colspan="3" align="left">none</td>
-                  </tr>
-                  <!-- END OwnerDBEmpty -->
-                  <!-- END CompanyTable -->
-                </table></td>
-              </tr>
-            </table>
-            <!-- END OwnerListTable --></td>
+          <td><b><?php echo ucwords($personal_name);?></b></td>
+          <td ><b><?php echo ucwords($personal_address); ?></b></td>
+          <td ><b>
+            <?php ?>
+          </b></td>
         </tr>
+        <!-- END PersonList -->
+        <!-- BEGIN PersonDBEmpty -->
+        <!-- END PersonDBEmpty -->
+        <!-- END PersonTable -->
+        <!-- BEGIN CompanyTable -->
+        <!-- BEGIN CompanyList -->
         <tr>
-          <td align="center" valign="top"><img src="images/spacer.gif" width="10" height="15" /></td>
+          <td><b><?php echo ucwords($company_name);?></b></td>
+          <td ><b><?php echo ucwords($company_address); ?></b></td>
+          <td >&nbsp;</td>
         </tr>
+        <!-- END CompanyList -->
+        <!-- BEGIN OwnerDBEmpty -->
         <tr>
-          <td align="center" valign="top" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td class="subtitle">TD DETAILS<a name="#td" id="#td"></a> <br /></td>
-              <td align="right" valign="top"><a href="#top"><img src="images/arrow_up.gif" width="40" height="30" border="0" /></a></td>
-            </tr>
-          </table></td>
+          <td colspan="3" align="left">
+         </td>
         </tr>
-        <tr>
-          <td align="center" valign="top"><img src="images/spacer.gif" width="10" height="15" /></td>
-        </tr>
-        <tr>
-          <td align="center" valign="top"><!-- BEGIN TDTable -->
-            <table width="90%" border="0" cellpadding="2" cellspacing="1">
-              <tr align="center">
-                <td bgcolor="#CCCCCC" class="fileds_comment"><font size="2"><b>TD Number</b></font></td>
-                <td bgcolor="#CCCCCC" class="fileds_comment"><font size="2"><b>Property Index Number </b></font></td>
-                <td bgcolor="#CCCCCC" class="fileds_comment"><font size=2><b>Assessment Value</b></td>
-              </tr>
-              <!-- BEGIN TDList -->
-              <tr align="left">
-                <td class="fileds_comment"  align="center" bgcolor="#F6F6F6" valign="middle"><font size="2">{tdNumber}</font></td>
-                <td class="fileds_comment"  align="right" bgcolor="#F6F6F6" valign="middle"><font size="2">{propertyIndexNumber}</font></td>
-                <td  align="right" class="fileds_comment" bgcolor="#F6F6F6" valign="middle"><font size="2">{assessedValue}</font></td>
-              </tr>
-              <tr id="tdRow{ctr}" align="left">
-                <td colspan="3"  align="center" valign="top" class="fileds_comment"><table width="100%" border="0" cellspacing="1" cellpadding="5" align="center" class="fileds_comment" bgcolor="#000000">
-                  <!-- BEGIN Land -->
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap"><b>Land
-                      Details </b></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap">Identification
-                      Numbers </td>
-                  </tr>
-                  <tr>
-                    <td rowspan="2" class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6" width="100">&nbsp;</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b>{arpNumber} </b><br />
-                      (ARP Number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b>{propertyIndexNumber} </b><br />
-                      (PIN) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><b>{octTctNumber} </b><br />
-                      (OCT/TCT Number) </td>
-                    <td class="fileds_comment"><b>{surveyNumber}</b> <br />
-                      (Survey Number) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" nowrap="nowrap" colspan="3" bgcolor="#CCCCCC">Boundaries </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" rowspan="2" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td bgcolor="#F6F6F6"><b>{north} </b><br />
-                      (north) </td>
-                    <td bgcolor="#F6F6F6"><b>{south} </b><br />
-                      (south) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td><b>{east} </b><br />
-                      (east) </td>
-                    <td><b>{west} </b><br />
-                      (west) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3" align="left">Adminisrator</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" rowspan="3" bgcolor="#F6F6F6"> Name</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{lastName} </b><br />
-                      (lastname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><b>{firstName} </b><br />
-                      (firstname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><b>{middleName} </b><br />
-                      middlename </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6" rowspan="3"> Address</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b>{number} </b><br />
-                      (number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b>{street} </b><br />
-                      (street) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{barangay}</strong> <br />
-                      (barangay) </td>
-                    <td class="fileds_comment"><b>{district} </b><br />
-                      (district) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><b>{municipalityCity} </b><br />
-                      (municipality/city) </td>
-                    <td class="fileds_comment"><b>{province} </b><br />
-                      (province) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">ContactNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{telephone} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Email</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{email} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Land
-                      Appraisal</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Kind</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {kind} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Classification</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {classification} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Sub-Class</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {subClass} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Area</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {area} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Actual
-                      Use</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {actualUse} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Unit
-                      Value</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {unitValue} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Market
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {marketValue} </b></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Value
-                      Adjustments Factor </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Adjustment
-                      Factor </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {adjustmentFactor} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">%
-                      Adjustment</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {percentAdjustment} </b></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Value
-                      Adjustment</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b> {valueAdjustment} </b></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Property
-                      Assessment </td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Adjusted
-                      Market Value</td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><b> {adjustedMarketValue} </b></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Assessment
-                      Level </td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><b> {assessmentLevel} </b></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Assessed
-                      Value </td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><b> {assessedValue} </b></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Effectivity</td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><b> {effectivity} </b></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Taxability</td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><b> {taxability} </b></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC" align="left">
-                    <td class="fileds_comment" colspan="3">Certification </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Verified
-                      By </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b> {verifiedByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Plottings
-                      By </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b> {plottingsByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Noted
-                      By</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><b>{notedByName} </b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Appraised
-                      By </td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"><b>{appraisedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{as_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Recommending
-                      Approval </td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"><b>{recommendingApprovalName}</b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{re_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Approved
-                      By </td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"><b>{approvedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{av_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Memoranda</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{memoranda} </b></td>
-                  </tr>
-                  <!-- END Land -->
-                  <!-- BEGIN PlantsTrees -->
-                  <tr bgcolor="#F6F6F6">
-                    <td colspan="3" class="fileds_comment" valign="middle" align="left"><b>PLANTS/TREES
-                      PROPERTY INFORMATION</b></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap">Identification
-                      Numbers </td>
-                  </tr>
-                  <tr>
-                    <td width="100" rowspan="2" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6" class="fileds_comment">&nbsp;</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{arpNumber}</strong> <br />
-                      (ARP Number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{propertyIndexNumber} </strong><br />
-                      (PIN) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{surveyNumber}</strong> <br />
-                      (Survey Number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Location
-                      Details </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">landPin</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{landPin} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3" align="left">Adminisrator</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" rowspan="3" bgcolor="#F6F6F6"><input type="hidden" name="personID" value="{personID}" />
-                      Name</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{lastName} </strong><br />
-                      (lastname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{firstName} </strong><br />
-                      (firstname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{middleName} </strong><br />
-                      middlename </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6" rowspan="3"><input type="hidden" name="addressID" value="{addressID}" />
-                      Address</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{number} </strong><br />
-                      (number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{street} </strong><br />
-                      (street) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{barangay} </strong><br />
-                      (barangay) </td>
-                    <td class="fileds_comment">{district} <br />
-                      (district) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{municipalityCity} </strong><br />
-                      (municipality/city) </td>
-                    <td class="fileds_comment"><strong>{province} </strong><br />
-                      (province) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">ContactNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6">{telephone} </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Email</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6">{email} </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Plants
-                      and Trees Appraisal</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">productClass</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{productClass} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">areaPlanted</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{areaPlanted} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">totalNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{totalNumber} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">nonFruitBearing</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{nonFruitBearing} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">fruitBearing</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{fruitBearing} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">age</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{age} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">unitPrice</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{unitPrice} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Value
-                      Computation</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">adjustmentFactor</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{adjustmentFactor} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">percentAdjustment</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{percentAdjustment} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">valueAdjustment</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{valueAdjustment} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Property
-                      Assessment </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Kind</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{kind} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Actual
-                      Use</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{actualUse} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Market
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{marketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Adjusted
-                      Market Value</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{adjustedMarketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessment
-                      Level </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessmentLevel} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessed
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessedValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Effectivity</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{effectivity} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Taxability</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{taxability} </strong></td>
-                  </tr>
-                  <tr align="left" bgcolor="#CCCCCC">
-                    <td class="fileds_comment" colspan="3">Certification </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Verified
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {verifiedByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Plottings
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {plottingsByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Noted
-                      By</td>
-                    <td bgcolor="#F6F6F6"><b>{notedByName} </b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Appraised
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{appraisedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{as_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Recommending
-                      Approval </td>
-                    <td bgcolor="#F6F6F6"><b>{recommendingApprovalName}</b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{re_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Approved
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{approvedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{av_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Memoranda</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{memoranda} </b></td>
-                  </tr>
-                  <!-- END PlantsTrees -->
-                  <!-- BEGIN ImprovementsBuildings -->
-                  <tr bgcolor="#F6F6F6">
-                    <td colspan="3" class="fileds_comment" valign="middle" align="left"><b>IMPROVEMENTS/BUILDING
-                      PROPERTY INFORMATION</b></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap">Identification
-                      Numbers </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6" width="100">&nbsp;</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{arpNumber} <br />
-                      (ARP Number) </strong></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{propertyIndexNumber} <br />
-                      (PIN) </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Location
-                      Details </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">landPin</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{landPin} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3" align="left">Adminisrator</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" rowspan="3" bgcolor="#F6F6F6">{personID}
-                      <input type="hidden" name="personID" value="" />
-                      Name</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{lastName} <br />
-                      (lastname) </strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{firstName} <br />
-                      (firstname) </strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{middleName} <br />
-                      middlename </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6" rowspan="3"><input type="hidden" name="addressID" value="{addressID}" />
-                      Address</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{number} <br />
-                      (number) </strong></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{street} <br />
-                      (street) </strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{barangay} <br />
-                      (barangay) </strong></td>
-                    <td class="fileds_comment"><strong>{district} <br />
-                      (district) </strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{municipalityCity} <br />
-                      (municipality/city) </strong></td>
-                    <td class="fileds_comment"><strong>{province} <br />
-                      (province) </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">ContactNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{telephone} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Email</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{email} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Structural
-                      Characteristics </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">foundation</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{foundation} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">columnsBldg</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{columnsBldg} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">beams</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{beams} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">trussFraming</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{trussFraming} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">roof</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{roof} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">exteriorWalls</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{exteriorWalls} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">flooring</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{flooring} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">doors</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{doors} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">ceiling</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{ceiling} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">structuralTypes</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{structuralTypes} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">buildingClassification</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{buildingClassification} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">buildingPermit</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{buildingPermit} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">buildingAge</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{buildingAge} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">cctNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{cctNumber} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">numberOfStoreys</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{numberOfStoreys} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">windows</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{windows} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">stairs</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{stairs} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">partition</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{partition} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">wallFinish</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{wallFinish} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">electrical</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{electrical} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">toiletAndBath</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{toiletAndBath} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">plumbingSewer</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{plumbingSewer} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">fixtures</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{fixtures} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateConstructed</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{dc_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{dc_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{dc_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateOccupied</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{do_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{do_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{do_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateCompleted</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{dm_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{dm_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{dm_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">areaOfGroundFloor</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{areaOfGroundFloor} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">totalBuildingArea</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{totalBuildingArea} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Value
-                      Computation</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">buildingCoreAndAdditionalItems</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{buildingCoreAndAdditionalItems} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">depreciationRate</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{depreciationRate} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">accumulatedDepreciation</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{accumulatedDepreciation} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Property
-                      Assessment </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Kind</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{kind} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Actual
-                      Use</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{actualUse} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Market
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{marketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Adjusted
-                      Market Value</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{adjustedMarketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessment
-                      Level </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessmentLevel} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessed
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessedValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Effectivity</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{effectivity} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Taxability</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{taxability} </strong></td>
-                  </tr>
-                  <tr align="left" bgcolor="#CCCCCC">
-                    <td class="fileds_comment" colspan="3">Certification </td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Verified
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {verifiedByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Plottings
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {plottingsByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Noted
-                      By</td>
-                    <td bgcolor="#F6F6F6"><b>{notedByName} </b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Appraised
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{appraisedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{as_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Recommending
-                      Approval </td>
-                    <td bgcolor="#F6F6F6"><b>{recommendingApprovalName}</b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{re_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Approved
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{approvedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{av_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Memoranda</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{memoranda} </b></td>
-                  </tr>
-                  <!-- END ImprovementsBuildings -->
-                  <!-- BEGIN Machineries -->
-                  <tr bgcolor="#F6F6F6">
-                    <td colspan="3" class="fileds_comment" valign="middle" align="left"><b>MACHINERIES
-                      PROPERTY INFORMATION</b></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap">Identification
-                      Numbers </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6" width="100">&nbsp;</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{arpNumber} </strong><br />
-                      (ARP Number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{propertyIndexNumber} </strong><br />
-                      (PIN) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Location
-                      Details </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">landPin</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{landPin} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">buildingPin</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{buildingPin} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3" align="left">Adminisrator</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" rowspan="3" bgcolor="#F6F6F6"> Name</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{lastName} </strong><br />
-                      (lastname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{firstName} </strong><br />
-                      (firstname) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" colspan="2"><strong>{middleName} </strong><br />
-                      middlename </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6" rowspan="3"><input type="hidden" name="addressID" value="{addressID}" />
-                      Address</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{number} </strong><br />
-                      (number) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{street}</strong> <br />
-                      (street) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{barangay} </strong><br />
-                      (barangay) </td>
-                    <td class="fileds_comment"><strong>{district} </strong><br />
-                      (district) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment"><strong>{municipalityCity} </strong><br />
-                      (municipality/city) </td>
-                    <td class="fileds_comment"><strong>{province} </strong><br />
-                      (province) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">ContactNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{telephone} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Email</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{email} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Machinery
-                      Information</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">machineryDescription</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{machineryDescription} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">brand</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{brand} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">modelNumber</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{modelNumber} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">capacity</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{capacity} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateAcquired</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{da_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{da_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{da_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">conditionWhenAcquired</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{conditionWhenAcquired}</strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">EconomicLife</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{estimatedEconomicLife} </strong><br />
-                      (estimatedEconomicLife) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{remainingEconomicLife} </strong><br />
-                      (remainingEconomicLife) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateOfInstallation</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{di_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{di_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{di_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">dateOfOperation</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><table border="0" cellspacing="0" cellpadding="2" width="100">
-                      <tr>
-                        <td class="fileds_comment" width="33%"><b>{do_month}</b> (month)</td>
-                        <td class="fileds_comment" width="33%"><b>{do_dayValue}</b> (day)</td>
-                        <td class="fileds_comment" width="33%"><b>{do_yearValue}</b> (year) </td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">remarks</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{remarks} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Property
-                      Appraisal </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">numberOfUnits</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{numberOfUnits} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">acquisitionCost</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{acquisitionCost} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6" rowspan="2">Additional
-                      Cost</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{freightCost} </strong><br />
-                      (frieghtCost) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{insuranceCost} </strong><br />
-                      (insuranceCost) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{installationCost}</strong> <br />
-                      (installationCost) </td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{othersCost} </strong><br />
-                      (othersCost) </td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Value
-                      Computation</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">depreciation</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{depreciation} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">depreciatedMarketValue</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{depreciatedMarketValue} </strong></td>
-                  </tr>
-                  <tr align="left">
-                    <td class="fileds_comment" bgcolor="#CCCCCC" colspan="3">Property
-                      Assessment </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Kind</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{kind} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Actual
-                      Use</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{actualUse} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Market
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{marketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Adjusted
-                      Market Value</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{adjustedMarketValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessment
-                      Level </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessmentLevel} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Assessed
-                      Value </td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{assessedValue} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Effectivity</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{effectivity} </strong></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Taxability</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><strong>{taxability} </strong></td>
-                  </tr>
-                  <tr align="left" bgcolor="#CCCCCC">
-                    <td class="fileds_comment" colspan="3">Certification </td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Verified
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {verifiedByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Plottings
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b> {plottingsByName}</b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Noted
-                      By</td>
-                    <td bgcolor="#F6F6F6"><b>{notedByName} </b></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6">&nbsp;</td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Appraised
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{appraisedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{as_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{as_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Recommending
-                      Approval </td>
-                    <td bgcolor="#F6F6F6"><b>{recommendingApprovalName}</b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{re_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{re_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr valign="top" bgcolor="#000000">
-                    <td align="right" bgcolor="#F6F6F6" class="fileds_comment">Approved
-                      By </td>
-                    <td bgcolor="#F6F6F6"><b>{approvedByName} </b></td>
-                    <td bgcolor="#F6F6F6" class="fileds_comment"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{av_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{av_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="left" bgcolor="#CCCCCC" colspan="3">Memoranda</td>
-                  </tr>
-                  <tr bgcolor="#000000">
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td class="fileds_comment" colspan="2" bgcolor="#F6F6F6"><b>{memoranda} </b></td>
-                  </tr>
-                  <!-- END Machineries -->
-                  <!-- BEGIN TD -->
-                  <tr bgcolor="#F6F6F6">
-                    <td colspan="3" class="fileds_comment" valign="middle" align="left"><b>DECLARATION
-                      OF PROPERTY</b> ({propertyType})</td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC">
-                    <td colspan="3" class="fileds_comment" align="left" nowrap="nowrap">Identification
-                      Numbers </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6" width="100">&nbsp;</td>
-                    <td colspan="2" bgcolor="#F6F6F6" class="fileds_comment"><strong>{taxDeclarationNumber} </strong><br />
-                      (Tax Declaration Number) <br /></td>
-                  </tr>
-                  <tr bgcolor="#CCCCCC" align="left">
-                    <td class="fileds_comment" colspan="3">Approval</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">Provincial
-                      Assessor</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{provincialAssessorName} </strong></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{pa_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{pa_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{pa_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" bgcolor="#F6F6F6">City/Municipal
-                      Assessor</td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"><strong>{cityMunicipalAssessorName}</strong></td>
-                    <td class="fileds_comment" bgcolor="#F6F6F6"> Date
-                      <table border="0" cellspacing="0" cellpadding="2" width="100">
-                        <tr>
-                          <td class="fileds_comment" width="33%"><b>{cm_month}</b> (month)</td>
-                          <td class="fileds_comment" width="33%"><b>{cm_dayValue}</b> (day)</td>
-                          <td class="fileds_comment" width="33%"><b>{cm_yearValue}</b> (year) </td>
-                        </tr>
-                      </table></td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" nowrap="nowrap" colspan="3" bgcolor="#CCCCCC">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" rowspan="4" bgcolor="#F6F6F6">&nbsp;</td>
-                    <td bgcolor="#F6F6F6"><strong>{cancelsTDNumber} </strong><br />
-                      Cancels TD Number)</td>
-                    <td bgcolor="#F6F6F6"><strong>{canceledByTDNumber} </strong><br />
-                      (Canceled By TD Number) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td><strong>{taxBeginsWithTheYear} </strong><br />
-                      (Tax Begins With The Year) </td>
-                    <td><strong>{ceasesWithTheYear} </strong><br />
-                      (Ceases With The Year) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td><strong>{enteredInRPARForByName} </strong><br />
-                      (enteredInRPARForBy) </td>
-                    <td><strong>{enteredInRPARForYear}</strong><br />
-                      (enteredInRPARForYear) </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td><strong>{previousOwner} </strong><br />
-                      (Previous Owner) </td>
-                    <td><strong>{previousAssessedValue} </strong><br />
-                      (Previous Assessed Value) </td>
-                  </tr>
-                  <tr>
-                    <td class="fileds_comment" align="left" nowrap="nowrap" colspan="3" bgcolor="#CCCCCC">Tax
-                      Bill </td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6">Market
-                      Value </td>
-                    <td colspan="2"><strong>{marketValue}</strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6">Assessed
-                      Value </td>
-                    <td colspan="2"><strong>{assessedValue}</strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6">Basic
-                      Tax </td>
-                    <td colspan="2"><strong>{basicTax}</strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6">SEF
-                      Tax </td>
-                    <td colspan="2"><strong>{sefTax}</strong></td>
-                  </tr>
-                  <tr bgcolor="#F6F6F6">
-                    <td class="fileds_comment" align="right" valign="middle" nowrap="nowrap" bgcolor="#F6F6F6">Total</td>
-                    <td colspan="2"><strong>{total}</strong></td>
-                  </tr>
-                  <!-- END TD -->
-                </table></td>
-              </tr>
-              <!-- END TDList -->
-              <!-- BEGIN TDDBEmpty -->
-              <tr align="left">
-                <td class="fileds_comment" colspan="6" bgcolor="#F6F6F6" valign="middle">none</td>
-              </tr>
-              <!-- END TDDBEmpty -->
-            </table>
-            <!-- END TDTable --></td>
-        </tr>
-        <tr>
-          <td align="center" valign="top"><img src="images/spacer.gif" width="10" height="15" /></td>
-        </tr>
-        <tr>
-          <td align="center" valign="top"><img src="images/spacer.gif" width="10" height="15" /><a name="#down" id="#down"></a></td>
-        </tr>
-        <tr>
-          <td align="center" valign="top" class="fileds_comment">Tampering with
-            this system is criminally punishable under Philippine Laws.<br />
-            &copy;
-            Republic of the Philippines National Computer Center. All Rights Reserved. </td>
-        </tr>
+        <!-- END OwnerDBEmpty -->
+        <!-- END CompanyTable -->
       </table>
-      <!-- END RPTOPTable --></td>
+      
+      <!-- END OwnerListTable --></td>
+  </tr>
+
+  <tr>
+    <td align="left"> 
+    <br>
+    <a href="#" id="RPU Identification Numbers" class="page1">RPU Identification Numbers</a> |
+          <a href="#" id="Declaration of Property" class="page2">Declaration of Property</a> |
+          <a href="#" id="GIS Technical Description" class="page3">GIS Technical Description</a> | 
+          <a href="#" id="Land" class="page4">Land</a> | 
+          <a href="#" id="Plants and Trees" class="page5">Plants and Trees</a> | 
+    <a href="#" id="Valuation" class="page6">Valuation</a></td>
+  </tr>
+  <tr>
+    <td align="center"><!-- BEGIN TDTable -->
+      <!-- END TDTable --></td>
   </tr>
 </table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td align="center" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="50"><h1><div id="page_name"></div></h1></td>
+  </tr>
+  <tr>
+    <td align="center"><!-- BEGIN OwnerListTable -->
+      <table width="90%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        </tr>
+      </table>
+      <!-- END OwnerListTable --></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td align="center" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <!-- BEGIN DeclarationOfProperty -->
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center">
+    
+     <!-- START RPUIdentification -->
+    <table width="90%" border="1" id="page1" class="type-one">
+      <tr>
+        <td align="left"colspan="2"><?php echo anchor('','Edit');?></td>
+      </tr>
+      <tr>
+        <th colspan="2" align="left">Identification Numbers </th>
+      </tr>
+      <tr>
+        <td width="15%" align="right"> ARP Number </td>
+        <td ><b></b>&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="170" align="right"> Property Index Number </td>
+        <td ><b>12345</b>&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="170" align="right"> Taxability </td>
+        <td ><b>Taxable</b>&nbsp; </td>
+      </tr>
+      <tr>
+        <td width="170" align="right"> Effectivity </td>
+        <td ><b>2013</b>&nbsp; </td>
+      </tr>
+    </table>
+    <!-- END RPUIdentification -->
+    
+     <!-- Start Declaration of Property -->
+      <table width="90%" border="1"  id="page2" hidden class="type-one">
+      <tr>
+        <td align="left" colspan="3"><?php echo anchor('','Edit');?></td>
+      </tr>
+      <tr>
+        <th colspan="3" align="left">Identification Numbers </th>
+      </tr>
+      <tr>
+        <td align="right" width="15%">&nbsp;</td>
+        <td colspan="2" ><b>12345 </b><br />(Tax Declaration Number) <br /></td>
+      </tr>
+      <tr align="left">
+        <th colspan="3">Approval</th>
+      </tr>
+      <tr>
+        <td align="right">Provincial Assessor</td>
+        <td></td>
+        <td> Date
+          <table border="0" width="100%" class="type-one">
+            <tr>
+              <td width="33%"><b>January</b><br> (month)</td>
+              <td width="33%"><b>1</b><br> (day)</td>
+              <td width="33%"><b>2012</b><br> (year) </td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td align="right">City/Municipal  Assessor</td>
+        <td><b></b></td>
+        <td> Date
+          <table border="0" width="100%" class="type-one">
+            <tr>
+              <td width="33%"><b>January</b><br> (month)</td>
+              <td width="33%"><b>1</b><br> (day)</td>
+              <td width="33%"><b>2012</b><br> (year) </td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <th align="left" colspan="3">&nbsp;</th>
+      </tr>
+      <tr>
+        <td align="right" rowspan="4">&nbsp;</td>
+        <td><b> </b><br />
+          (Cancels TD Number)</td>
+        <td><b> </b><br />
+          (Canceled By TD Number) </td>
+      </tr>
+      <tr>
+        <td ><b>2022 </b><br />
+          (Tax Begins With The Year) </td>
+        <td ><!-- 
+				   <b> </b><br>
+				   (Ceases With The Year) --></td>
+      </tr>
+      <tr>
+        <td ><b> </b><br />
+          (enteredInRPARForBy) </td>
+        <td ><b></b><br />
+          (enteredInRPARForYear) </td>
+      </tr>
+      <tr >
+        <td><b> </b><br />
+          (Previous Owner) </td>
+        <td ><b> </b><br />
+          (Previous Assessed Value) </td>
+      </tr>
+      <tr align="left">
+        <th colspan="3">Memoranda</th>
+      </tr>
+      <tr >
+        <td>&nbsp;</td>
+        <td colspan="2"><b></b><br /></td>
+      </tr>
+    </table>
+
+    
+    </td>
+  </tr>
+  <!-- END DeclarationOfProperty -->
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <!-- BEGIN GISTechnicalDescriptionHide -->
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"><table width="90%" border="1" id="page3" class="type-one" hidden>
+      <!-- BEGIN GISTechnicalDescriptionEncodeLink -->
+      <tr>
+        <td align="left"colspan="6"><?php echo anchor('','Edit');?></td>
+      </tr>
+      <!-- END GISTechnicalDescriptionEncodeLink -->
+      <!-- BEGIN GISTechnicalDescription -->
+      <tr>
+        <th colspan="6" align="left">GIS Technical Description</th>
+      </tr>
+      <tr>
+        <td align="left" colspan="6"> Cadastral Lot Number : <b>524</b></td>
+      </tr>
+      <tr>
+        <td align="center"><b>pointID</b>&nbsp; </td>
+        <td align="center"><b>point type</b>&nbsp; </td>
+        <td align="center"><b>quadrant</b>&nbsp; </td>
+        <td ><b>bearing</b> (degrees)&nbsp; </td>
+        <td ><b>bearing</b> (minutes)&nbsp; </td>
+        <td ><b>distance</b> (m)&nbsp; </td>
+      </tr>
+      <!-- END GISTechnicalDescription -->
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <!-- END GISTechnicalDescriptionHide -->
+  <!-- BEGIN Land -->
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"><!-- BEGIN LandTable -->
+      <form method="post" name="landForm">
+        <table width="90%" border="1" id="page4" class="type-one" hidden>
+          <tr align="left">
+            <td colspan="4"bgcolor="#F6F6F6" ><!-- BEGIN AddLandLink -->
+              <!-- END AddLandLink --><?php echo anchor('','Add Land');?></td>
+            <td align="center"><input type="button" name="Button2" value="Print" onclick="location.href='PrintLandFAAS.php?rpts_Session=128a019c98004619f6e6bc35909cc6a6&amp;afsID=2&amp;odID=2&amp;ownerID=2&amp;afsID=2&amp;print=true';" /></td>
+          </tr>
+          <tr align="center">
+            <td width="15%" ><b>Show/Hide<br />
+              </b>
+              <input type="checkbox" name="landShowHide" value="1" onclick="toggleShowHide('land');" /></td>
+            <td width="25%" ><b>Market Value</b></td>
+            <td width="30%" ><b>Assessed Value</b></td>
+            <td width="15%" >&nbsp;</td>
+            <td width="15%" ><input type="hidden" name="formAction" value="remove" />
+              <input type="button" name="Submit" value="Remove" onclick="document.landForm.submit();" /></td>
+          </tr>
+          <tr align="left">
+            <td align="center" ><a name="#land4" id="#land4"></a>
+              <input type="checkbox" name="landChk0" value="1" onclick="toggle('land','4')" /></td>
+            <td align="center" > 6,000.00 </td>
+            <td align="center" > 0.00 </td>
+            <td  align="center" ><!-- BEGIN EditLandLink -->
+              <a href="javascript: openWin('LandEncode.php?rpts_Session=128a019c98004619f6e6bc35909cc6a6&amp;afsID=2&amp;propertyID=4&amp;formAction=edit','popupWindow',50,50,600,500);">Edit</a>
+              <!-- END EditLandLink --></td>
+            <td  align="center" ><input type="checkbox" name="landID[]" value="4" /></td>
+          </tr>
+          <tr id="landRow4" align="left">
+            <td colspan="5" align="center">
+            <table width="100%" border="1" align="center" class="type-one">
+              <tr>
+                <td colspan="3" align="left"><b>Land Details </b></td>
+              </tr>
+              <tr>
+                <th colspan="3" align="left">Identification Numbers </th>
+              </tr>
+              <!--
+
+				 <tr> 
+
+				  <td rowspan="2" align="right" nowrap width="100">&nbsp;</td>
+
+				  <td> <b> 
+
+				   </b><br>
+
+				   (ARP Number) </td>
+
+				  <td> <b> 
+
+				   </b><br>
+
+				   (PIN) </td>
+
+				 </tr>
+
+				 -->
+              <tr>
+                <td align="right" width="15%">&nbsp;</td>
+                <td ><b> </b><br />
+                  (OCT/TCT Number) </td>
+                <td ><b></b> <br />
+                  (Survey Number) </td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Boundaries </th>
+              </tr>
+              <tr>
+                <td align="right" rowspan="2">&nbsp;</td>
+                <td><b> </b><br />
+                  (north) </td>
+                <td><b> </b><br />
+                  (south) </td>
+              </tr>
+              <tr>
+                <td><b> </b><br />
+                  (east) </td>
+                <td><b> </b><br />
+                  (west) </td>
+              </tr>
+              <tr>
+                <td align="right">Boundary Description</td>
+                <td colspan="2" align="left"><b> </b></td>
+              </tr>
+              <tr>
+                <th colspan="3" align="left">Adminisrator</th>
+              </tr>
+              <tr>
+                <td align="right" rowspan="3"> Name</td>
+                <td colspan="2"><b> </b><br />
+                  (lastname) </td>
+              </tr>
+              <tr>
+                <td colspan="2"><b> </b><br />
+                  (firstname) </td>
+              </tr>
+              <tr>
+                <td colspan="2"><b> </b><br />
+                  middlename </td>
+              </tr>
+              <tr>
+                <td align="right" rowspan="3"> Address</td>
+                <td><b> </b><br />
+                  (number) </td>
+                <td><b> </b><br />
+                  (street) </td>
+              </tr>
+              <tr>
+                <td ><b></b> <br />
+                  (barangay) </td>
+                <td ><b> </b><br />
+                  (district) </td>
+              </tr>
+              <tr>
+                <td ><b> </b><br />
+                  (municipality/city) </td>
+                <td ><b> </b><br />
+                  (province) </td>
+              </tr>
+              <tr>
+                <td align="right">ContactNumber</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Email</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Land 
+                  
+                  Appraisal</th>
+              </tr>
+              <tr>
+                <!-- Kind is now known as "Description" -->
+                <td align="right">Description</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Classification</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Sub-Class</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Area</td>
+                <td colspan="2"><b> 100 </b>square meters</td>
+              </tr>
+              <tr>
+                <td align="right">Actual 
+                  
+                  Use</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Unit 
+                  
+                  Value</td>
+                <td colspan="2"><b> 60 </b></td>
+              </tr>
+              <tr>
+                <td align="right">Market 
+                  
+                  Value </td>
+                <td colspan="2"><b> 6,000.00 </b></td>
+              </tr>
+              <tr align="left">
+                <th colspan="3">Value Adjustments Factor </th>
+              </tr>
+              <tr>
+                <td align="right">Adjustment 
+                  
+                  Factor </td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">% 
+                  
+                  Adjustment</td>
+                <td colspan="2"><b> 100 %</b></td>
+              </tr>
+              <tr>
+                <td align="right">Value 
+                  
+                  Adjustment</td>
+                <td colspan="2"><b> 0.00 </b></td>
+              </tr>
+              <tr align="left">
+                <th colspan="3">Property Assessment </th>
+              </tr>
+              <tr>
+                <td align="right" >Adjusted 
+                  
+                  Market Value</td>
+                <td colspan="2" ><b> 6,000.00 </b></td>
+              </tr>
+              <tr>
+                <td align="right" >Assessment 
+                  
+                  Level </td>
+                <td colspan="2" ><b> %</b></td>
+              </tr>
+              <tr>
+                <td align="right" >Assessed 
+                  
+                  Value </td>
+                <td colspan="2" ><b> 0.00 </b></td>
+              </tr>
+              <!--
+
+				 <tr> 
+
+				  <td align="right" >Effectivity</td>
+
+				  <td colspan="2" ><b> 
+
+				    </b></td>
+
+				 </tr>
+
+				 -->
+              <!--
+
+				 <tr> 
+
+				  <td align="right" >Taxability</td>
+
+				  <td colspan="2" ><b> 
+
+				   Taxable </b></td>
+
+				 </tr>
+
+				 -->
+              <tr align="left">
+                <th colspan="3">Certification </th>
+              </tr>
+              <tr>
+                <td align="right">Verified 
+                  
+                  By </td>
+                <td><b> xx</b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right">Plottings 
+                  
+                  By </td>
+                <td><b> </b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right">Noted 
+                  
+                  By</td>
+                <td><b> </b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right" >Appraised 
+                  
+                  By </td>
+                <td ><b> </b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="right" >Recommending 
+                  
+                  Approval </td>
+                <td ><b></b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="right" >Approved 
+                  
+                  By </td>
+                <td ><b> </b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Memoranda</th>
+              </tr>
+              <tr>
+                <td align="right">&nbsp;</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="left" colspan="3">Misc</td>
+              </tr>
+              <tr>
+                <td align="right">Idle</td>
+                <td colspan="2"><b>No</b></td>
+              </tr>
+              <tr>
+                <td align="right">Contested</td>
+                <td colspan="2"><b>No</b></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr id="landRow5" align="left">
+          
+          </tr>
+        </table>
+      </form>
+      <!-- END LandTable --></td>
+  </tr>
+  <!-- END Land -->
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <!-- BEGIN PlantsTrees -->
+  <tr>
+    <td align="center" class="subtitle"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="subtitle">&nbsp;</td>
+        <td align="right"><a href="#top"></a></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"><!-- BEGIN PlantsTreesTable -->
+      <form method="post" name="plantsTreesForm" id="plantsTreesForm">
+        <table width="90%" border="1" id="page5" class="type-one" hidden>
+          <tr align="left" >
+            <td colspan="4"bgcolor="#F6F6F6"><!-- BEGIN AddPlantsTreesLink -->
+              <!-- END AddPlantsTreesLink --><?php echo anchor('','Add Plants/Trees');?></td>
+            <td align="center"><input type="button" name="Button2" value="Print"/></td>
+          </tr>
+          <tr align="center" >
+            <th width="15%" ><b>Show/Hide<br />
+              </b></th>
+            <th width="30%" ><b>Market Value</b></th>
+            <th width="30%" ><b>Assessed Value</b></th>
+            <th width="12%" ><b>&nbsp;</b></th>
+            <th width="12%" >&nbsp;</th>
+          </tr>
+          <tr align="left" >
+            <td align="center"><a name="#plantsTrees1" id="#plantsTrees1"></a>
+              <input type="checkbox" name="plantsTreesChk0" value="1"/></td>
+            <td align="center"> 2,000.00 </td>
+            <td align="center"> 0.00 </td>
+            <td  align="center"><a href="#">Edit</a></td>
+            <td  align="center"><a href="#">Remove</a></td>
+          </tr>
+          <tr id="plantsTreesRow1" align="left" >
+            <td colspan="5"  align="center" ><table width="100%" border="1" align="center" class="type-one">
+              <tr>
+                <td colspan="3" align="left"><b>PLANTS/TREES PROPERTY INFORMATION</b></td>
+              </tr>
+              <tr>
+                <th colspan="3" align="left">Identification Numbers </th>
+              </tr>
+              <!--
+
+
+
+				 <tr> 
+
+				  <td width="100" rowspan="2" align="right" nowrap >&nbsp;</td>
+
+				  <td><b></b> 
+
+				   <br>
+
+				   (ARP Number) </td>
+
+				  <td><b> 
+
+				   </b><br>
+
+				   (PIN) </td>
+
+				 </tr>
+
+
+
+				 -->
+              <tr>
+                <td width="15%" align="right" >&nbsp;</td>
+                <td colspan="2"><b></b> <br />
+                  (Survey Number) </td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Location  Details </th>
+              </tr>
+              <tr>
+                <td align="right">landPin</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <th colspan="3" align="left">Adminisrator</th>
+              </tr>
+              <tr>
+                <td align="right" rowspan="3"><input type="hidden" name="personID" value="37214" />
+                  Name</td>
+                <td colspan="2"><b> </b><br />
+                  (lastname) </td>
+              </tr>
+              <tr>
+                <td colspan="2"><b> </b><br />
+                  (firstname) </td>
+              </tr>
+              <tr>
+                <td colspan="2"><b> </b><br />
+                  middlename </td>
+              </tr>
+              <tr>
+                <td align="right" rowspan="3"><input type="hidden" name="addressID" value="13" />
+                  Address</td>
+                <td><b> </b><br />
+                  (number) </td>
+                <td><b> </b><br />
+                  (street) </td>
+              </tr>
+              <tr>
+                <td ><b> </b><br />
+                  (barangay) </td>
+                <td ><b></b> <br />
+                  (district) </td>
+              </tr>
+              <tr>
+                <td ><b> </b><br />
+                  (municipality/city) </td>
+                <td ><b> </b><br />
+                  (province) </td>
+              </tr>
+              <tr>
+                <td align="right">ContactNumber</td>
+                <td colspan="2"><b></b></td>
+              </tr>
+              <tr>
+                <td align="right">Email</td>
+                <td colspan="2"><b></b></td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Plants and Trees Appraisal</th>
+              </tr>
+              <tr>
+                <td align="right">productClass</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">areaPlanted</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">totalNumber</td>
+                <td colspan="2"><b>50 </b></td>
+              </tr>
+              <tr>
+                <td align="right">nonFruitBearing</td>
+                <td colspan="2"><b>0 </b></td>
+              </tr>
+              <tr>
+                <td align="right">fruitBearing</td>
+                <td colspan="2"><b>50 </b></td>
+              </tr>
+              <tr>
+                <td align="right">age</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">unitPrice</td>
+                <td colspan="2"><b>40 </b></td>
+              </tr>
+              <tr align="left">
+                <th colspan="3">Value Computation</th>
+              </tr>
+              <tr>
+                <td align="right">adjustmentFactor</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">% Adjustment</td>
+                <td colspan="2"><b></b> %</td>
+              </tr>
+              <tr>
+                <td align="right">valueAdjustment</td>
+                <td colspan="2"><b>0.00 </b></td>
+              </tr>
+              <tr align="left">
+                <th colspan="3">Property Assessment </th>
+              </tr>
+              <tr>
+                <td align="right">Kind</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Actual 
+                  
+                  Use</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+              <tr>
+                <td align="right">Market 
+                  
+                  Value </td>
+                <td colspan="2"><b>2,000.00 </b></td>
+              </tr>
+              <tr>
+                <td align="right">Adjusted 
+                  
+                  Market Value</td>
+                <td colspan="2"><b>0.00 </b></td>
+              </tr>
+              <tr>
+                <td align="right">Assessment 
+                  
+                  Level </td>
+                <td colspan="2"><b> </b> %</td>
+              </tr>
+              <tr>
+                <td align="right">Assessed 
+                  
+                  Value </td>
+                <td colspan="2"><b>0.00 </b></td>
+              </tr>
+              <!--
+
+				 <tr> 
+
+				  <td align="right">Effectivity</td>
+
+				  <td colspan="2"><b> 
+
+				   </b></td>
+
+				 </tr>
+
+				 -->
+              <!--
+
+				 <tr> 
+
+				  <td align="right">Taxability</td>
+
+				  <td colspan="2"><b> 
+
+				   </b> </td>
+
+				 </tr>
+
+				 -->
+              <tr align="left">
+                <th colspan="3">Certification </th>
+              </tr>
+              <tr>
+                <td align="right">Verified 
+                  
+                  By </td>
+                <td><b> xx</b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right">Plottings 
+                  
+                  By </td>
+                <td><b> </b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right">Noted 
+                  
+                  By</td>
+                <td><b> </b></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="right" >Appraised 
+                  
+                  By </td>
+                <td><b> </b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="right" >Recommending 
+                  
+                  Approval </td>
+                <td><b></b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="right" >Approved 
+                  
+                  By </td>
+                <td><b> </b></td>
+                <td > Date
+                  <table border="0" width="100%" class="type-one">
+                    <tr>
+                      <td width="33%"><b></b> (month)</td>
+                      <td width="33%"><b></b> (day)</td>
+                      <td width="33%"><b></b> (year) </td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <th align="left" colspan="3">Memoranda</th>
+              </tr>
+              <tr>
+                <td align="right">&nbsp;</td>
+                <td colspan="2"><b> </b></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+      </form>
+      <!-- END PlantsTreesTable --></td>
+  </tr>
+  <!-- END PlantsTrees -->
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td align="center"><table width="100%" border="1" id="page6" class="type-one" hidden>
+      <!--tr> 
+
+                            <td align="left" colspan="4">- 
+
+                              <a href="javascript: openWin('AFSEncode.php?rpts_Session=128a019c98004619f6e6bc35909cc6a6&afsID=2&formAction=edit','popupWindow',0,0,550,610);">enter 
+
+                              values</a></td>
+
+                          </tr-->
+      <tr align="center">
+        <th width="25%" >Total Value</th>
+        <th width="25%" >Market Value</th>
+        <th width="25%" >Assessed Value</th>
+      </tr>
+      <!-- BEGIN LandTotals -->
+      <tr>
+        <td align="center" > Land</td>
+        <td align="right" >6,000.00</td>
+        <td align="right" >0.00</td>
+      </tr>
+      <!-- END LandTotals -->
+      <!-- BEGIN PlantsTreesTotals -->
+      <tr>
+        <td align="center" >Plants/Trees</td>
+        <td align="right" >0.00</td>
+        <td align="right" >0.00</td>
+      </tr>
+      <!-- END PlantsTreesTotals -->
+      <tr>
+        <td align="center" >Total</td>
+        <td align="right" ><b>6,000.00</b></td>
+        <td align="right" ><b>0.00</b></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center"><a name="#down" id="#down"></a></td>
+  </tr>
+  <tr>
+    <td align="center" >Tampering with 
+      
+      this system is criminally punishable under Philippine Laws.<br />
+      &copy; 
+      
+      Republic of the Philippines National Computer Center. All Rights Reserved. </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+$("#page_name").html('RPU Identification Numbers');
+//--------------------------------------------------------------------------------------------------------------
+$("a").click(function() {
+	$("#page_name").html($(this).attr('id'));
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page1").click(function() {
+	$('#page1').show('slow');
+	
+	$('#page2').hide();
+	$('#page3').hide();
+	$('#page4').hide();
+	$('#page5').hide();
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page2").click(function() {
+	$('#page2').show('slow');
+	
+	$('#page1').hide(); 
+	$('#page3').hide();
+	$('#page4').hide();
+	$('#page5').hide();
+	$('#page6').hide();
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page3").click(function() {
+	$('#page3').show('slow');
+	
+	$('#page1').hide();
+	$('#page2').hide(); 
+	$('#page4').hide();
+	$('#page5').hide();
+	$('#page6').hide();
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page4").click(function() {
+	$('#page4').show('slow');
+	
+	$('#page1').hide();
+	$('#page2').hide();
+	$('#page3').hide(); 
+	$('#page5').hide();
+	$('#page6').hide();
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page5").click(function() {
+	$('#page5').show('slow');
+	
+	$('#page1').hide();
+	$('#page2').hide();
+	$('#page3').hide();
+	$('#page4').hide(); 
+	$('#page6').hide();
+
+});
+//--------------------------------------------------------------------------------------------------------------
+$(".page6").click(function() {
+	$('#page6').show('slow');
+	
+	$('#page1').hide();
+	$('#page2').hide();
+	$('#page3').hide();
+	$('#page4').hide();
+	$('#page5').hide();
+});
+//--------------------------------------------------------------------------------------------------------------
+</script>

@@ -445,20 +445,23 @@ class Property extends MX_Controller {
 		{
 			$this->form_validation->set_rules('code', 'Code','required');
 			$this->form_validation->set_rules('description', 'Description', 'required');
-			$this->form_validation->set_rules('value', 'Unit Value', 'required|numeric');
+			//$this->form_validation->set_rules('value', 'Unit Value', 'required|numeric');
 			
 			
 			if ($this->form_validation->run($this) == TRUE)
 			{
 				
-				$l->code			= $this->input->post('code');
-				$l->description		= $this->input->post('description');
-				$l->value			= $this->input->post('value');
-				$l->status			= $this->input->post('status');
+				$l->code				= $this->input->post('code');
+				$l->description			= $this->input->post('description');
+				$l->range_lower_bound	= $this->input->post('range_lower_bound');
+				$l->range_upper_bound	= $this->input->post('range_upper_bound');
+				$l->value				= $this->input->post('value');
+				$l->type				= $this->input->post('type');
+				$l->status				= $this->input->post('status');
 				
 				$l->save();
 				
-				$this->session->set_flashdata('msg', 'Plant Class has been saved!');
+				$this->session->set_flashdata('msg', 'Building and Improvement Class has been saved!');
 						
 				redirect(base_url().'settings_manage/property/build_classes', 'refresh');
 			}
@@ -471,18 +474,18 @@ class Property extends MX_Controller {
 	
 	// --------------------------------------------------------------------
 	
-	function plant_classes_delete1($id = '')
+	function build_classes_delete($id = '')
 	{
-		$l = new Plant_tree_class_m();
+		$l = new Improvement_building_class_m();
 		$l->get_by_id( $id )->delete();
 				
-		$this->session->set_flashdata('msg', 'Plant Class has been deleted!');
+		$this->session->set_flashdata('msg', 'Building and Improvement Class has been deleted!');
 		
-		redirect(base_url().'settings_manage/property/plant_classes', 'refresh');
+		redirect(base_url().'settings_manage/property/build_classes', 'refresh');
 		
 	}
 	
-	function plant_actual_uses1()
+	function build_actual_uses()
 	{
 		$data = array();
 		
@@ -490,13 +493,13 @@ class Property extends MX_Controller {
 		
 		$data['msg'] = '';
 		
-		$l = new Plant_tree_actual_use_m();
+		$l = new Improvement_building_actual_use_m();
 		
 		$l->order_by('description');
 		
 		$data['plants'] = $l->get();
 		
-		$data['main_content'] = 'property/plant/plant_actual_uses';
+		$data['main_content'] = 'property/build/build_actual_uses';
 		
 		$this->load->view('includes/template', $data);
 	}

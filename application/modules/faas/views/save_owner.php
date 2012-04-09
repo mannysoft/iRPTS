@@ -118,12 +118,13 @@
       </tr>
       <tr>
         <td align="right" valign="middle" nowrap="nowrap" >&nbsp;</td>
-        <td colspan="2" ><input type="submit" name="button" id="button" value="Save" /></td>
+        <td colspan="2" >&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><input name="op" type="hidden" id="op" value="1" /></td>
+        <td><input type="submit" name="button" id="button" value="Save" />
+        <input name="op" type="hidden" id="op" value="1" /></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
